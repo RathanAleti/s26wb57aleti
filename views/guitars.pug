@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+
+  -
+    var results = [
+      { brand: 'Fender', style: 'Stratocaster', price: 1200 },
+      { brand: 'Gibson', style: 'Les Paul', price: 2500 },
+      { brand: 'Taylor', style: 'Acoustic 814ce', price: 3200 }
+    ]
+
+  .container-fluid
+    .row
+      each item in results
+        .col-sm-2
+          p Brand: #{item.brand}
+          p Style: #{item.style}
+          p Price: $#{item.price}
