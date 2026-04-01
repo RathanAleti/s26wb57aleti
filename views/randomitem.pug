@@ -1,6 +1,10 @@
 extends layout
-
 block content
   h1= title
-  p Welcome to #{title}
   
+  - var image_names = ['guitar1.jpeg', 'guitar2.jpeg', 'guitar3.jpeg', 'guitar4.jpeg', 'guitar5.jpeg']
+  
+  - for (let i = 0; i < 3; i++) {
+    - var name = image_names[Math.floor(Math.random() * 5)]
+    img(src=`/images/${name}`, alt=`${name}`, height="300", width="300")
+  - }
