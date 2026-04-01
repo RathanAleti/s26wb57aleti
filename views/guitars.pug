@@ -12,8 +12,13 @@ block content
 
   .container-fluid
     .row
-      each item in results
-        .col-sm-2
+      each item, index in results
+        .col-sm-2(onclick=`buy(${index})`, style="cursor:pointer")
           p Brand: #{item.brand}
           p Style: #{item.style}
           p Price: $#{item.price}
+
+  script.
+    function buy(index) {
+      alert('You purchased item ' + index + '.')
+    }    
